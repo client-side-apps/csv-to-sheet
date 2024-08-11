@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV to Sheet</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    #csv-input {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSV to Sheet</h1>
+
+  <textarea id="csv-input" placeholder="Paste your CSV data here..."></textarea>
+  <button onclick="transformCSV()">Transform</button>
+
+  <div id="table-container"></div>
+
+  <script>
+    function transformCSV() {
+      const csvData = document.getElementById('csv-input').value;
+      const rows = csvData.split('\n');
+      let tableHtml = '<table>';
+
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i].split(',');
+        tableHtml += '<tr>';
+        for (let j = 0; j < row.length; j++) {
+          tableHtml += '<td>' + row[j] + '</td>';
+        }
+        tableHtml += '</tr>';
+      }
+
+      tableHtml += '</table>';
+      document.getElementById('table-container').innerHTML = tableHtml;
+    }
+  </script>
+
+</body>
+</html>
