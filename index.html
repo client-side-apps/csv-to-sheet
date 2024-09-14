@@ -33,6 +33,9 @@
       max-width: 800px; /* Adjust the value as needed */
       margin: 0 auto; /* Center the content horizontally */
     }
+    #table-container table {
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
@@ -41,9 +44,9 @@
 
   <input type="file" id="file-input" accept=".csv">
   <textarea id="csv-input" placeholder="Paste your CSV data here..."></textarea>
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
   <div id="table-container"></div>
-  <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
   <script>
     const fileInput = document.getElementById('file-input');
