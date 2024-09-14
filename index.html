@@ -38,10 +38,12 @@
   <button onclick="transformCSV()">Transform</button>
 
   <div id="table-container"></div>
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
   <script>
     const fileInput = document.getElementById('file-input');
     const csvInput = document.getElementById('csv-input');
+    const tableContainer = document.getElementById('table-container');
 
     fileInput.addEventListener('change', (event) => {
       const file = event.target.files[0];
@@ -68,7 +70,17 @@
       }
 
       tableHtml += '</table>';
-      document.getElementById('table-container').innerHTML = tableHtml;
+      tableContainer.innerHTML = tableHtml;
+    }
+
+    function copyToClipboard() {
+      const table = tableContainer.querySelector('table'); 
+      const range = document.createRange();
+      range.selectNode(table); 
+      window.getSelection().removeAllRanges(); 
+      window.getSelection().addRange(range); 
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
     }
   </script>
 
