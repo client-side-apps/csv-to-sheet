@@ -51,8 +51,13 @@
 
       reader.onload = (e) => {
         csvInput.value = e.target.result;
+        transformCSV();
       }
       reader.readAsText(file);
+    });
+
+    csvInput.addEventListener('input', () => {
+      transformCSV();
     });
 
     function transformCSV() {
