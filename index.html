@@ -65,13 +65,16 @@
     csvInput.addEventListener('input', () => {
       transformCSV();
     });
-
+    
     function transformCSV() {
       const csvData = csvInput.value;
       const rows = csvData.split('\n');
       let tableHtml = '<table>';
 
       for (let i = 0; i < rows.length; i++) {
+        // Skip empty lines
+        if (rows[i].trim() === "") continue; 
+
         const row = rows[i].split(',');
         tableHtml += '<tr>';
         for (let j = 0; j < row.length; j++) {
