@@ -44,7 +44,9 @@
 
   <input type="file" id="file-input" accept=".csv">
   <textarea id="csv-input" placeholder="Paste your CSV data here..."></textarea>
+  
   <button onclick="copyToClipboard()">Copy to Clipboard</button>
+  <button onclick="removeHeader()">Remove Header</button>
 
   <div id="table-container"></div>
 
@@ -97,6 +99,16 @@
       window.getSelection().addRange(range); 
       document.execCommand("copy");
       window.getSelection().removeAllRanges();
+    }
+
+    function removeHeader() {
+      const table = tableContainer.querySelector('table');
+      if (table) {
+        const headerRow = table.querySelector('tr:first-child');
+        if (headerRow) {
+          headerRow.remove();
+        }
+      }
     }
   </script>
 
