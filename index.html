@@ -56,15 +56,23 @@
     const tableContainer = document.getElementById('table-container');
 
     fileInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      const reader = new FileReader();
+      handleFiles(event.target.files);
+    });
 
+    async function handleFiles(files) {
+      const file = files[0];
+      if (!file.type === 'text/csv') { 
+        alert('Not a CSV file.')
+        return;
+      }
+
+      const reader = new FileReader();
       reader.onload = (e) => {
         csvInput.value = e.target.result;
         transformCSV();
       }
       reader.readAsText(file);
-    });
+    }
 
     csvInput.addEventListener('input', () => {
       transformCSV();
@@ -110,6 +118,38 @@
         }
       }
     }
+
+    // Drag and drop
+    // const dropzone = document.getElementById("dropbox");
+    // dropzone.ondragover = dropzone.ondragenter = (e) => {
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    // }
+    // dropzone.ondrop = (e) => {
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    //   handleFiles(e.dataTransfer.files);
+    // }
+
+    // File Handling API, see https://web.dev/file-handling/
+    if ('launchQueue' in window && 'files' in LaunchParams.prototype) {
+      launchQueue.setConsumer(async (launchParams) => {
+      // Nothing to do when the queue is empty.
+      if (!launchParams.files.length) { return; }
+      console.log("File(s) to Handle (File Handling API)");
+
+      // Resolve FileSystemFileHandle array to File array
+      const files = await Promise.all(launchParams.files.map( (fileHandle) => {return fileHandle.getFile();} ));
+      handleFiles(files);
+      });
+    }
+
+    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.addEventListener('message', event => {
+      if(event.files) {
+        handleFiles(event.files);
+      }
+    });
   </script>
 
 </body>
