@@ -3,7 +3,7 @@ const cacheName = 'csv-to-sheet-' + cacheVersion;
 
 const urlsToCache = [
   "/",
-  // "/icons/icon.svg",
+   "/icons/icon.svg",
 ];
 
 // On install, cache critical offline resources.

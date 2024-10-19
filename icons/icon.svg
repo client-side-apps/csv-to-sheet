@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="icon.png"/>
+    </bx:export>
+  </defs>
+  <path d="M 54.743 20.615 L 377.139 20.615 L 457.257 100.733 L 457.257 491.385 L 54.743 491.385 L 54.743 20.615 Z" style="stroke: rgb(0, 0, 0); stroke-width: 20px; fill: rgb(0, 174, 66);">
+    <title>Paper</title>
+  </path>
+  <path d="M 277.916 195.28 L 358.027 275.391 L 277.916 275.391 L 277.916 195.28 Z" style="stroke: rgb(0, 0, 0); stroke-width: 20px; stroke-linejoin: bevel; fill: rgb(0, 174, 66);" transform="matrix(1, 0.000077, -0.000078, 1, 99.245209, -174.686401)" bx:shape="triangle 277.916 195.28 80.111 80.111 0 0 1@12d69134">
+    <title>Corner</title>
+  </path>
+  <path d="M -249 -299.486 L -219.572 -248.514 L -278.429 -248.514 L -249 -299.486 Z" style="" transform="matrix(-1, 0, 0, -1, 0, 0)" bx:shape="triangle -278.429 -299.486 58.857 50.972 0.5 0 1@4bed309d">
+    <title>Arrow</title>
+  </path>
+  <text style="fill: rgb(255, 255, 255); font-family: 'Courier New'; font-size: 102px; font-weight: 700; white-space: pre; text-anchor: middle;" x="247.797" y="195.455">C,S,V</text>
+  <rect x="135.909" y="329.778" width="224.563" height="118.031" style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;"/>
+  <path style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;" d="M 135.909 388.494 L 360.472 389.099"/>
+  <path style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;" d="M 250.005 329.778 L 251.216 447.809"/>
+</svg>

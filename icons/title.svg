@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="icon.png"/>
+    </bx:export>
+  </defs>
+  <path fill="#fff" d="M0 0h1000v500H0z"/>
+  <text style="font-family: Arial, sans-serif; font-size: 45px; font-weight: 700; white-space: pre; text-anchor: middle;" transform="matrix(0.89706, 0, 0, 0.89706, 243.400463, 124.263479)"><tspan x="520.881" y="136.311" style="font-size: 80px;">CSV to Sheet</tspan><tspan x="520.8809814453125" dy="1em">​</tspan><tspan x="520.8809814453125" dy="1em">​</tspan><tspan>Client-side converter</tspan></text>
+  <g style="" transform="matrix(0.794285, 0, 0, 0.794285, 208.160672, -373.485529)">
+    <path d="M -163.082 548.331 L 159.314 548.331 L 239.432 628.449 L 239.432 1019.101 L -163.082 1019.101 L -163.082 548.331 Z" style="stroke: rgb(0, 0, 0); stroke-width: 20px; fill: rgb(0, 174, 66);">
+      <title>Paper</title>
+    </path>
+    <path d="M 277.916 195.28 L 358.027 275.391 L 277.916 275.391 L 277.916 195.28 Z" style="stroke: rgb(0, 0, 0); stroke-width: 20px; stroke-linejoin: bevel; fill: rgb(0, 174, 66);" transform="matrix(0.999999997036, 0.000077000011, -0.000078000012, 0.999999996959, -118.579939125301, 353.029322418969)" bx:shape="triangle 277.916 195.28 80.111 80.111 0 0 1@12d69134">
+      <title>Corner</title>
+    </path>
+    <path d="M -31.175 -827.202 L -1.747 -776.23 L -60.604 -776.23 L -31.175 -827.202 Z" style="" transform="matrix(-1, 0, 0, -1, 0, 0)" bx:shape="triangle -60.604 -827.202 58.857 50.972 0.5 0 1@e56fbeb1">
+      <title>Arrow</title>
+    </path>
+    <text style="fill: rgb(255, 255, 255); font-family: 'Courier New'; font-size: 102px; font-weight: 700; white-space: pre; text-anchor: middle;" x="29.972" y="723.171">C,S,V</text>
+    <rect x="-81.916" y="857.494" width="224.563" height="118.031" style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;"/>
+    <path style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;" d="M -81.916 916.21 L 142.647 916.815"/>
+    <path style="stroke: rgb(255, 255, 255); fill: none; stroke-width: 25px;" d="M 32.18 857.494 L 33.391 975.525"/>
+  </g>
+</svg>
