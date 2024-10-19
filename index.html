@@ -58,11 +58,52 @@
     #table-container table {
       font-family: monospace;
     }
+
+    html {
+	  max-width: 70ch;
+	  padding: 3em 1em;
+	  margin: auto;
+	  line-height: 1.75;
+	  font-size: 1.25em;
+	  font-family: sans-serif;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+	  margin: 3em 0 1em;
+	}
+
+	p,ul,ol {
+	  margin-bottom: 2em;
+	}
+
+	.icon {
+	  float: left;
+	  margin-right: 1em;
+	  width: 3em;
+	  height: 3em;
+	}
+
+	pre {
+	  overflow-x:auto;
+	  font-size:0.8em;
+	}
+
+	footer {
+		font-size: small;
+	}
   </style>
 </head>
 <body>
+  <header>
+    <img src="icons/icon.svg" alt="icon" class="icon">
+    <h1>Online CSV to Sheet converter</h1>
+    <p>
+      An online <b>client-side</b> webapp to transform CSV files to a spreadsheet /  table.<br> 
+      CSV files are <b>not</b> uploaded to any server, they are converted in your browser.
+      </p>
+  </header>
 
-  <h1>CSV to Sheet</h1>
+  <main>
 
   <input type="file" id="file-input" accept=".csv">
   <textarea id="csv-input" placeholder="Paste your CSV data here..."></textarea>
@@ -71,6 +112,16 @@
   <button onclick="removeHeader()">Remove Header</button>
 
   <div id="table-container"></div>
+
+  </main>
+
+  <footer>
+  <p>
+    Pro tip: Install the app for offline use and file handling.<br>
+    Built by <a target="_blank" href="https://steren.fr">Steren</a> (<a href="https://github.com/client-side-apps/csv-to-sheet">source code</a>).
+  </p>
+
+  </footer>
 
   <script>
     const fileInput = document.getElementById('file-input');
