@@ -106,6 +106,7 @@
   <main>
 
   <input type="file" id="file-input" accept=".csv">
+  <label for="delimiter-input">Delimiter:</label><input type="text" id="delimiter-input" placeholder="Delimiter" value=",">
   <textarea id="csv-input" placeholder="Paste your CSV data here..."></textarea>
   
   <button onclick="copyToClipboard()">Copy to Clipboard</button>
@@ -127,6 +128,7 @@
     const fileInput = document.getElementById('file-input');
     const csvInput = document.getElementById('csv-input');
     const tableContainer = document.getElementById('table-container');
+    const delimiterInput = document.getElementById('delimiter-input');
 
     fileInput.addEventListener('change', (event) => {
       handleFiles(event.target.files);
@@ -152,15 +154,16 @@
     });
     
     function transformCSV() {
+      const delimiter = delimiterInput.value || ',';
       const csvData = csvInput.value;
       const rows = csvData.split('\n');
       let tableHtml = '<table>';
 
       for (let i = 0; i < rows.length; i++) {
         // Skip empty lines
-        if (rows[i].trim() === "") continue; 
+        if (rows[i].trim() === "") continue;
 
-        const row = rows[i].split(',');
+        const row = rows[i].split(delimiter);
         tableHtml += '<tr>';
         for (let j = 0; j < row.length; j++) {
           tableHtml += '<td>' + row[j] + '</td>';
