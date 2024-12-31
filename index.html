@@ -163,7 +163,7 @@
         // Skip empty lines
         if (rows[i].trim() === "") continue;
 
-        const row = rows[i].split(delimiter);
+        const row = parseCSVRow(rows[i], delimiter);
         tableHtml += '<tr>';
         for (let j = 0; j < row.length; j++) {
           tableHtml += '<td>' + row[j] + '</td>';
@@ -173,6 +173,12 @@
 
       tableHtml += '</table>';
       tableContainer.innerHTML = tableHtml;
+    }
+
+    function parseCSVRow(row, delimiter) {
+      // Split by delimiter, except when inside quotes
+      const regex = new RegExp(`(?!\\B"[^"]*)${delimiter}(?![^"]*"\\B)`);
+      return row.split(regex).map(cell => cell.replace(/^"|"$/g, '').replace(/""/g, '"'));
     }
 
     function copyToClipboard() {
